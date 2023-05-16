@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "vite",
-    "build:client": "vite build --outDir dist/client --ssrManifest",
-    "build:server": "vite build --outDir dist/server --ssr renderer/index.js",
-    "build": "npm run build:client && npm run build:server",
-    "preview": "node bundle.js && vite preview --outDir dist/client"
+    "build:server": "vite build --outDir dist/server --ssr server/index.js",
+    "build": "npm run build:server && node bundle.js",
+    "preview": "npm run build && vite preview --outDir dist/client"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",

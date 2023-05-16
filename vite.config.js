@@ -2,19 +2,8 @@ import { defineConfig } from "vite";
 import VitePluginVue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-  server: {
-    host: "0.0.0.0",
-    port: 80
-  },
-  preview: {
-    host: "0.0.0.0",
-    port: 80
-  },
-  build: {
-    rollupOptions: {
-      input: __dirname + "/source/index.js"
-    }
-  },
+  server: { port: 3000 },
+  preview: { port: 3000 },
   plugins: [
     VitePluginVue(),
 
@@ -25,7 +14,7 @@ export default defineConfig({
           server.middlewares.use(async (request, response, next) => {
             if (response.headersSent || !request.originalUrl) return next();
 
-            const entry = await server.ssrLoadModule("/renderer/index.js");
+            const entry = await server.ssrLoadModule("/server/index.js");
             let result = await entry.render({ url: request.originalUrl });
             result = { status: 200, ...(result || {}) };
 
