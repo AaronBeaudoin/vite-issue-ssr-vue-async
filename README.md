@@ -10,5 +10,7 @@ In this super minimal Vue SSR project, there is a single `Root.vue` component, w
 
 1. Run `npm run dev` and go to `http://localhost:3000`.  
    Note that the async component is rendered during SSR and sent to the browser. 👍
-2. Run `npm run preview` and go to `http://localhost:3000` again.  
+2. Run `npm run preview-entry` and go to `http://localhost:3000` again.  
+   Note that the async component is rendered during SSR and sent to the browser. 🤙
+2. Run `npm run preview-bundle` and go to `http://localhost:3000` again.  
    Note that the async component is not rendered. ⛔️
